@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <NavBar/>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -30,3 +31,24 @@
   }
 }
 </style>
+<script>
+// app.js
+import Vue from 'vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import NavBar from "@/components/NavBar.vue";
+
+// Install BootstrapVue
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+import './custom.scss'
+import Component from 'vue-class-component';
+
+@Component({
+  components:{
+    NavBar
+  }
+})
+export default class App extends Vue {
+}
+</script>
